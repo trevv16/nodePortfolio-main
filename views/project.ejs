@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <%- include partials/head.ejs %>
+  <link rel="stylesheet" href="css/project.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <%- include partials/nav.ejs %>
+
+  <!-- Project Section -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-2">
+        <h4>Web Dev</h4>
+      </div>
+      <div class="project col-10">
+        <div class="row">
+          <div class="projectHead">
+            <h2>Web Clock</h3>
+            <h5 id="date">Apr 4th, 2019</h5>
+            <ul class="links">
+              <li><img class="img-responsive" src="images/Proj Link Icon.png" alt="View Demo"></li>
+              <li><img class="img-responsive" src="images/Proj Github Icon.png" alt="View Code"></li>
+            </ul>
+            <p class="projDesc text-wrap">This is a website showing some basic js and design skills.</p>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="projectDetails">
+            <h5>Built With</h5>
+            <ul id="tools">
+              <li><p>HTML</p></li>
+              <li><p>CSS</p></li>
+              <li><p>JS</p></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+  <!-- End Project Section -->
+
+
+
+  <%- include partials/sidebar.ejs %>
+
+
+
+  <%- include partials/footer.ejs %>
+
+
+  <%- include partials/scripts.ejs %>
+</body>
+
+</html>

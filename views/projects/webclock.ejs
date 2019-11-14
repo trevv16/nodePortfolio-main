@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!--Head-->
+    <%- include ../partials/head.ejs %>
+    
+    <link rel="stylesheet" href="../stylesheets/clock.css" type="text/css" />
+    <script type="text/javascript" src="../javascripts/clock.js"></script>
+    
+    <title>JS Clock</title>
+
+
+  </head>
+  <body>
+    <main>
+      <h3>JS Clock</h3>
+      
+      <div id="return">
+        <a href="/projects"><p>Return to Website</p><i class="fa fa-chevron-left"></i></a>
+
+      </div>
+
+      <div class="container">
+        <div class="myClock">
+          <h4 id="date">Sunday March 31, 2019</h4>
+
+          <div class="timing">
+            <h1 id="time">4:28:36</h1>
+            <h2 id="dayType">PM</h2>
+          </div>
+
+        </div>
+      </div>
+
+
+    </main>
+    
+    <!--Footer-->
+    <%- include ../partials/footer.ejs %>
+
+  </body>
+</html>

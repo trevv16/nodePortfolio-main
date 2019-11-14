@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+    
+  </head>
+  <body>
+    
+    <main>
+      <!--Header-->
+      <%- include ../partials/header.ejs %>
+      
+      <form id="userForm" method="POST" action="/user/changepassword">
+        <input id="emailField" type="email" name="password" placeholder="Password"/>
+        <input id="emailField" type="email" name="verifyPassword" placeholder="Verify Password"/>
+        <a href="/user/signin"><p id="forgotLink">You can still Sign In</p></a>
+        <input id="submitBtn" type="submit" value="Reset"/>
+      </form>
+            
+            
+    </main>
+    
+    
+    
+    <% include ../partials/footer.ejs %>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+
+
+/* Intro */
+.intro {
+
+  color: #fff;
+  margin-top: 150px;
+  margin-left: 100px;
+}
+
+/* Intro Profile Image */
+.profile-img {
+
+  max-width: 300px;
+  margin-bottom: -100px;
+}
+
+.profile-img img {
+
+  position: relative;
+  max-width: 270px;
+
+}
+
+.fold {
+
+  height: 540px;
+}

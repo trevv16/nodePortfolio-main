@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ../partials/head.ejs %>
+    
+  </head>
+  <body>
+    
+    <!--Admin Navigation-->
+    <%- include ../partials/adminNav.ejs %>
+    
+    <!--Header-->
+    <%- include ../partials/header.ejs %>
+    
+    <form id="userForm" method="POST" action="/addProject" enctype="multipart/form-data">
+      
+      <input class="nameField" type="text" name="name" placeholder="Name"/>
+      
+      <input class="dateField" type="text" name="date" placeholder="Date: Format MM/DD/YY"/>
+      
+      <input class="imgField" type="text" name="img" placeholder="Img URL"/>
+      
+      <input class="imgUpload" type="file" accept="image/*" name="photo" >
+      
+      <textarea class="descField" name="desc" placeholder="Description"></textarea>
+      
+      <select multiple name="skills">
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="Javascript">Javascript</option>
+        <option value="jQuery">jQuery</option>
+        <option value="AJAX">AJAX</option>
+        <option value="Bootstrap">Bootstrap</option>
+        <option value="Java">Java</option>
+        <option value="MongoDB">MongoDB</option>
+        <option value="SQL">SQL</option>
+        <option value="Node Js">Node Js</option>
+      </select>
+      
+      
+      <input class="linkField" type="text" name="link" placeholder="Project Internal Link"/>
+      
+      <input class="demoField" type="text" name="demo" placeholder="Demo Link"/>
+      
+      <input class="codeField" type="text" name="code" placeholder="Code Link"/>
+      
+      
+      
+      
+      <input id="submitBtn" type="submit" value="Submit"/>
+    </form>
+    
+    
+    
+    
+    <%- include ../partials/footer.ejs %>
+  </body>
+</html>

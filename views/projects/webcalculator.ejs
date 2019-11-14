@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    
+    <!--Head-->
+    <%- include ../partials/head.ejs %>
+    <link rel="stylesheet" href="../stylesheets/calc.css" type="text/css" />
+    <script type="text/javascript" src="../javascripts/calc.js"></script>
+    <title>JS Calculator</title>
+
+  </head>
+  <body>
+    <main>
+      <h1>Basic Web Calculator</h1>
+
+      <div class="return">
+        <a href="/projects"><p>Return to Website</p><i class="fa fa-chevron-left"></i></a>
+
+      </div>
+
+      <div class="calculator grid-container">
+        <!-- form for user input that represents a calculator -->
+    		<form name="frmCalc" id="frmCalc">
+          <div class="header">
+            <p>Trevv's Calculator</p>
+          </div>
+          <div class="history">
+            <caption>History</caption>
+            <!-- <br> -->
+            <p></p>
+            <img src="https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/Down+Arrow.png" alt="">
+          </div>
+    			<!-- Text Box to enter a numeric value -->
+    			<input type="text" id="txtNumber" value="" size="20"/><br/><br/>
+
+
+          <!-- *** Clear *** -->
+          <input id="clear" class="grid-item cmdBtn" type="reset" name="btnClear" value="AC"/>
+
+    			<!-- *** Percent *** -->
+    			<input id="percent" class="grid-item cmdBtn" type="button" value="%" name="btnPercent"/>
+
+    			<!-- *** Divide *** -->
+    			<input id="divide" class="func grid-item cmdBtn" type="button" value="÷" name="btnDivide"/>
+
+          <!-- *** Multiply *** -->
+    			<input id="multi" class="func grid-item cmdBtn" type="button" value="*" name="btnMulti"/><br/>
+
+          <!-- Number buttons -->
+    			<input id="7" class="grid-item buttns" type="button" value="7" name="btn7"/>
+    			<input id="8" class="grid-item buttns" type="button" value="8" name="btn8"/>
+    			<input id="9" class="grid-item buttns" type="button" value="9" name="btn9"/>
+
+          <!-- ADD: Sets up operation to add current number to next number entered -->
+    			<input id="add"  class="func grid-item cmdBtn" type="button" value="+" name="btnPlus"/><br/>
+
+
+          <!-- Number buttons -->
+    			<input id="4" class="grid-item buttns" type="button" value="4" name="btn4"/>
+    			<input id="5" class="grid-item buttns" type="button" value="5" name="btn5"/>
+    			<input id="6" class="grid-item buttns" type="button" value="6" name="btn6"/>
+
+          <!-- *** Subtract *** -->
+    			<input id="sub"  class="func grid-item cmdBtn" type="button" value="-" name="btnMinus"/><br/>
+
+
+    			<!-- Number buttons -->
+    			<input id="1" class="grid-item buttns" type="button" value="1" name="btn1"/>
+    			<input id="2" class="grid-item buttns" type="button" value="2" name="btn2"/>
+    			<input id="3" class="grid-item buttns" type="button" value="3" name="btn3"/><br/>
+
+
+          <!-- *** Equals *** -->
+    			<input id="calculate" class="grid-item calcBtn" type="button" name="btnCalc" value="="/>
+
+          <div class="lastRow">
+            <!-- *** Plus/Minus *** -->
+      			<input id="pm" class="grid-item cmdBtn" type="button" value="±" name="btnPM"/>
+
+
+      			<!-- Number buttons -->
+      			<input id="0" class="grid-item buttns" type="button" value="0" name="btn0"/>
+
+            <!-- *** Decimal *** -->
+            <input id="deci" class="grid-item cmdBtn buttns" type="button" value="." name="btnDecimal"/>
+          </div>
+
+
+    			<br/><br/>
+
+    		</form>
+      </div>
+    </main>
+
+    <!--Footer-->
+    <%- include ../partials/footer.ejs %>
+
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include ../partials/head.ejs %>
+        <title>DevNjeru - Weather</title>
+        <link rel="stylesheet" href="/stylesheets/weather.css" type="text/css" />
+        
+    </head>
+    <body>
+        <main>
+            <div class="query">
+                <input id="cityQuery" type="text" name="city" placeholder="Search by city or zip"/>
+            
+                <button id="dataBtn">Get Weather</button>
+            </div>
+            
+            
+            
+            <div class="weatherData">
+                
+                <div class="dateloc">
+                    
+                    <p id="date"></p>
+                    <h3 id="city"></h3>
+                    
+                </div>
+                
+                <div id="temps">
+                    <div class="tempRange">
+                        <h5 id="low_temp"></h5>
+                        <h5 id="high_temp"></h5>
+                    </div>
+                
+                    
+                    <h1 id="temp"></h1> 
+                </div>
+                
+                
+                
+                <div class="weatherIcon">
+                    <img id="icon" src="#"></img>
+                    <h4 id="desc"></h4>
+                </div>
+                
+                
+                <div class="sun">
+                    <h4 id="sun"></h4>
+                    <h4 id="suntime"></h4>
+                </div>
+                
+                
+                <div class="metaData">
+                    <div class="precip">
+                        <p id="precipTitle">Rain</p>
+                        <h5 id="precipVal"></h5>
+                        
+                    </div>
+                    <div class="humid">
+                        <p id="humidTitle">Humidity</p>
+                        <h5 id="humidVal"></h5>
+                        
+                    </div>
+                    <div class="wind">
+                        <p id="windTitle">Wind</p>
+                        <h5 id="windVal"></h5>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+            </div>
+        </main>
+        
+        
+        
+        
+        <%- include ../partials/footer.ejs %>
+        
+        <script type="text/javascript" src="/javascripts/weather.js"></script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ../partials/head.ejs %>
+    
+  </head>
+  <body>
+    
+    <!--Header-->
+    <%- include ../partials/header.ejs %>
+    
+    <form id="userForm" method="POST" action="/updateProject/<%= Id %>">
+      
+      <input class="nameField" type="text" name="name" placeholder="<%= Project.name %>"/>
+      
+      <input class="dateField" type="text" name="pub_date" placeholder="<%= Project.pub_date %>"/>
+      
+      <input class="imgField" type="text" name="proj_img" placeholder="<%= Project.proj_img %>"/>
+      
+      <textarea class="descField" name="proj_desc" placeholder="<%= Project.proj_desc %>"></textarea>
+      
+      <input class="linkField" type="text" name="proj_link" placeholder="<%= Project.proj_link %>"/>
+      
+      <input class="demoField" type="text" name="demo_link" placeholder="<%= Project.demo_link %>"/>
+      
+      <input class="codeField" type="text" name="code_link" placeholder="<%= Project.code_link %>"/>
+      
+      
+      
+      
+      <input id="submitBtn" type="submit" value="Submit"/>
+    </form>
+    
+    
+    
+    
+    <%- include ../partials/footer.ejs %>
+    
+    <script type="text/javascript" src="/javascripts/editProject.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,35 @@
+
+
+.work {
+
+  margin-left: 150px;
+
+}
+
+.work h2 {
+
+  margin-bottom: 50px;
+}
+
+.work-cards {
+
+  margin-bottom: 275px;
+}
+
+.work-cards a {
+
+  font-size: 38px;
+  margin-right: 25px;
+  max-height: 205px;
+  max-width: 255px;
+  overflow: auto;
+  padding: 50px 10px;
+  width: 220px;
+  background-color: #222E50;
+  border: none;
+}
+
+.work-cards a:hover {
+
+  background-color: #EE6C4D;
+}

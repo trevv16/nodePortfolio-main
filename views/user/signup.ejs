@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+    
+  </head>
+  <body>
+    
+    <main>
+      <!--Header-->
+      <%- include ../partials/header.ejs %>
+      
+      <form id="userForm" method="POST" action="/user/logup">
+        <input id="emailField" type="text" name="name" placeholder="Name"/>
+        <input id="emailField" type="email" name="email" placeholder="Email"/>
+        <input id="passwordField" type="password" name="password" placeholder="Password"/>
+        <input id="passwordField" type="password" name="confirm_password" placeholder="Confirm Password"/>
+        <a href="/user/forgot"><p id="forgotLink">Forgot Password?</p></a>
+        <input id="submitBtn" type="submit" value="Sign Up"/>
+      </form>
+      
+      <div class="corrections">
+        
+      </div>
+            
+            
+    </main>
+    
+    
+    
+    <% include ../partials/footer.ejs %>
+    <script type="text/javascript" src="javascripts/authScripts.js"></script>
+  </body>
+</html>

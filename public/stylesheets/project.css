@@ -1,0 +1,82 @@
+
+
+/* Project Card */
+.project {
+
+  background-color: #222F3E;
+  max-width: 750px;
+  margin-top: 45px;
+  padding-top: 20px;
+}
+
+
+/* Project Lists */
+.project ul {
+
+  display: inline-flex;
+  list-style: none;
+}
+
+/* Project Head Section */
+.projectHead {
+
+  margin-left: 200px;
+}
+
+
+/* Project Icons List */
+.projectHead li {
+
+  margin-right: 50px;
+}
+
+#date {
+
+  color: #EE6C4D;
+  margin-top: 35px;
+}
+
+/* Icons Section */
+.links {
+
+  max-width: 30px;
+  margin-left: -40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Link Icons */
+.links img {
+
+  width: 20px;
+
+}
+
+/* Project Description Text */
+.projDesc {
+
+  margin-bottom: 50px;
+}
+
+
+/* Project Details Section */
+.projectDetails {
+
+  margin-top: 20px;
+  margin-left: 50px;
+
+}
+
+
+/* Project Tools List */
+.projectDetails li {
+
+  margin-right: 300%;
+}
+
+#tools {
+
+  color: #EE6C4D;
+  margin-top: 50px;
+  margin-left: -30px;
+}

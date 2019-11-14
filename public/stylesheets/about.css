@@ -1,0 +1,66 @@
+
+/* About Me Section */
+.aboutSection {
+
+  margin-bottom: 25px;
+  margin-top: 75px;
+
+}
+
+.aboutImg img {
+
+  max-height: 100%;
+  max-width: 100%;
+
+}
+
+
+/* About Me Headers */
+.aboutDetails p, .aboutDetails h1 {
+
+  color: #fff;
+}
+
+.aboutDetails h4 {
+
+  color: #454955;
+}
+
+#focusSection {
+
+  color: #EE6C4D;
+}
+
+/* About Me List */
+.aboutDetails ul {
+  display: inline-flex;
+  list-style: none;
+
+}
+
+.details {
+
+  margin-bottom: 450px;
+}
+
+.aboutDetails a {
+
+  color: #fff;
+
+}
+
+.aboutType {
+  padding: 0;
+
+}
+
+.aboutType li {
+
+  margin: 10px 30px 50px 0;
+}
+
+
+#education .sectionDetails, #experience .sectionDetails {
+
+  margin-left: 15px;
+}
