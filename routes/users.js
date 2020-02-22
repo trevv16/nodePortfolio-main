@@ -15,7 +15,7 @@ router.get('/signup', function(req, res, next) {
 });
 
 /* POST user sign up listing. */
-router.post('/logup', userCon.signUp);
+router.post('/signup', userCon.signUp);
 
 
 
@@ -25,7 +25,7 @@ router.get('/signin', function(req, res, next) {
 });
 
 /* POST user sign in listing. */
-router.post('/login', userCon.signIn);
+router.post('/signin', userCon.signIn);
 
 
 

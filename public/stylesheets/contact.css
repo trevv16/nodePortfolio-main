@@ -3,7 +3,7 @@
 /* Email Section */
 .email {
 
-  margin-top: 150px;
+  margin-top: 175px;
   margin-left: 100px;
   margin-bottom: 160px;
 }
@@ -16,6 +16,7 @@
 
 /* Email Paragraph */
 .email p {
-
+  font-size: 24px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }

@@ -9,8 +9,8 @@
 
 .aboutImg img {
 
-  max-height: 100%;
-  max-width: 100%;
+  height: 450px;
+  width: auto;
 
 }
 
@@ -26,7 +26,7 @@
   color: #454955;
 }
 
-#focusSection {
+#focusSection a{
 
   color: #EE6C4D;
 }
@@ -38,10 +38,6 @@
 
 }
 
-.details {
-
-  margin-bottom: 450px;
-}
 
 .aboutDetails a {
 

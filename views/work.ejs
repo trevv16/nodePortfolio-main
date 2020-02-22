@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <%- include partials/head.ejs %>
-  <link rel="stylesheet" href="css/work.css">
+  <link rel="stylesheet" href="stylesheets/work.css">
 </head>
 
 <body>
@@ -10,7 +10,7 @@
   <%- include partials/nav.ejs %>
 
   <!-- Work Section -->
-  <div class="work container">
+  <div class="workHeader container">
 
     <div class="row">
 
@@ -21,13 +21,23 @@
         <a href="#" class="btn btn-success">UI Design</a>
         <a href="#" class="btn btn-success">Web Dev</a>
         <a href="#" class="btn btn-success">Work</a>
-        <a href="#" class="btn btn-success">Projects</button></a>
+        <a href="#" class="btn btn-success">Projects</a>
       </div>
 
     </div>
     <!-- End Work Header Section -->
 
 
+    <!-- Work Cards -->
+    <div class="row">
+      <div class="back">
+        <a href=""><img src="images/Back-Icon.png" alt=""><h5>Web Dev</h5></a>
+      </div>
+
+      <%- include partials/workCards.ejs %>
+
+    </div>
+    <!-- End Work Cards -->
 
 
   </div>

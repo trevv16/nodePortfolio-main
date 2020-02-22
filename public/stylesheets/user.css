@@ -8,7 +8,7 @@
     width: 400px;
 }
 
-#emailField, #passwordField {
+.emailField, .passwordField {
     
     margin-bottom: 35px;
     width: 350px;
@@ -16,7 +16,7 @@
     border: none;
     padding: 5px 20px;
     border-radius: 11px;
-    background-color: rgba(152, 193, 217, 0.47);
+    background-color: #FFFFFF;
     
     
     font-size: 20px;
@@ -66,7 +66,7 @@
 
 
 
-#emailField ::placeholder, #passwordField::placeholder .nameField::placeholder, .dateField::placeholder, .imgField::placeholder, .descField::placeholder, .linkField::placeholder, .demoField::placeholder, .codeField::placeholder {
+.emailField ::placeholder, .passwordField::placeholder .nameField::placeholder, .dateField::placeholder, .imgField::placeholder, .descField::placeholder, .linkField::placeholder, .demoField::placeholder, .codeField::placeholder {
     
     color: #FFFFFF;
 }

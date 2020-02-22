@@ -46,7 +46,9 @@ router.get('/resume', function(req, res, next) {
 
 
 /* GET work page. */
-router.get('/work', projCon.getAll);
+router.get('/work', function(req, res, next) {
+  res.render('work', {Title: "Work"});
+});
 
 
 /* GET contact page. */

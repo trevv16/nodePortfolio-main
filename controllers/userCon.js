@@ -47,9 +47,6 @@ exports.signUp = function(req, res, next) {
     }
     
     hashing().then( function() {
-    
-        console.log("Hash: ", hashPassword); 
-        
         var genUser = new User({
           
           _id: new mongoose.Types.ObjectId(),
@@ -61,9 +58,8 @@ exports.signUp = function(req, res, next) {
         
         genUser.save().then( function(result) {
             
-            
-            res.redirect('signIn');
-            
+          console.log('sign up successful');
+          res.redirect('signIn');
         })
         .catch( function(err) {
             if(err){
@@ -84,7 +80,7 @@ exports.signIn = function(req, res, next) {
   var querypassword = req.body.password;
   var user;
   
-  
+  console.log('made it');
   User.findOne({email: queryemail}).then( function(result) {
     
     // Check if Exists
@@ -121,7 +117,7 @@ exports.signIn = function(req, res, next) {
           
           
           
-          res.redirect('/admin');
+          res.redirect('/admin/');
         }
         
       });

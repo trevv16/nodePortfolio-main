@@ -1,9 +1,83 @@
 
+.back {
+  display: inline-flex;
+  height: 30px;
+  margin-right: 20px;
+  width: auto;
 
-.work {
+}
+
+.back h5{
+  color: #7F8496;
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.card {
+
+  background-color: #222F3E;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  height: auto;
+  padding: 25px;
+  width: 750px;
+}
+
+.card-img {
+  max-width: 450px;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* .card .card-img {
+
+  justify-content: center;
+} */
+
+.card .title {
+
+  font-size: 38px;
+}
+
+.card .date {
+
+  color: #EE6C4D;
+}
+
+
+.icons ul{
+
+  display: inline-flex;
+  list-style: none;
+
+}
+
+.icons img {
+
+  margin-left: -40px;
+  margin-right: 80px;
+  width: 25px;
+  height: auto;
+}
+
+.skill-list {
+
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.skill {
+
+  color: #EE6C4D;
+  padding: 25px 30px;
+}
+
+
+.workHeader {
 
   margin-left: 150px;
-
+  margin-top: 100px;
 }
 
 .work h2 {
@@ -13,7 +87,7 @@
 
 .work-cards {
 
-  margin-bottom: 275px;
+  margin-bottom: 75px;
 }
 
 .work-cards a {

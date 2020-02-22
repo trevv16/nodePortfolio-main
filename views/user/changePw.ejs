@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% include ../partials/head.ejs %>
+    <% include ../partials/adminHead.ejs %>
     
   </head>
   <body>
@@ -10,9 +10,9 @@
       <!--Header-->
       <%- include ../partials/header.ejs %>
       
-      <form id="userForm" method="POST" action="/user/changepassword">
-        <input id="emailField" type="email" name="password" placeholder="Password"/>
-        <input id="emailField" type="email" name="verifyPassword" placeholder="Verify Password"/>
+      <form id="userForm" method="POST" action="/users/changepassword">
+        <input class="emailField" type="email" name="password" placeholder="Password"/>
+        <input class="emailField" type="email" name="verifyPassword" placeholder="Verify Password"/>
         <a href="/user/signin"><p id="forgotLink">You can still Sign In</p></a>
         <input id="submitBtn" type="submit" value="Reset"/>
       </form>

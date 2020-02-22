@@ -11,25 +11,20 @@ var upload = multer({dest: __dirname + '/uploads/images'});
 
 // Configure ENV variables
 var dotenv = require('dotenv');
-
 dotenv.config();
-
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
-mongoose.connect("mongodb+srv://trevv:"+ process.env.MONGO_ATLAS_PW +"@dev-rv8ag.mongodb.net/Portfolio?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-    useUnifiedTopology: true
-  }
-
-);
-
+mongoose.connect("mongodb+srv://trevv:"+ process.env.MONGO_ATLAS_PW +"@dev-rv8ag.mongodb.net/Portfolio?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -43,10 +38,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse application/json
 app.use(bodyParser.json());
-
-
-
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -61,10 +52,8 @@ app.use(function(req, res, next) {
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
   if(req.method === "OPTIONS") {
-
     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, PATCH, DELETE");
     return res.status(200).json({});
-
   }
   next();
 });
@@ -75,6 +64,7 @@ app.set('view engine', 'ejs');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
