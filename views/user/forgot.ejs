@@ -2,16 +2,15 @@
 <html>
   <head>
     <% include ../partials/head.ejs %>
-    
+    <link rel="stylesheet" href="/stylesheets/user.css">
   </head>
   <body>
     
     <main>
       <!--Header-->
-      <%- include ../partials/header.ejs %>
       
       <form id="userForm" method="POST" action="/users/resetpassword">
-        <input class="emailField" type="email" name="email" placeholder="Email"/>
+        <input id="emailField" type="email" name="username" placeholder="Email"/>
         <a href="/user/signin"><p id="forgotLink">Already a user? Sign In!</p></a>
         <input id="submitBtn" type="submit" value="Submit"/>
       </form>

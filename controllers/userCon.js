@@ -72,72 +72,59 @@ exports.signUp = function(req, res, next) {
 }
 
 
-
 // Sign In Function
 exports.signIn = function(req, res, next) {
-    
-  var queryemail = req.body.email;
-  var querypassword = req.body.password;
-  var user;
+
   
-  console.log('made it');
-  User.findOne({email: queryemail}).then( function(result) {
     
-    // Check if Exists
-    if(result){
+  // var queryemail = req.body.email;
+  // var querypassword = req.body.password;
+  // var user;
+  
+  
+  // User.findOne({email: queryemail}).then( function(result) {
+  //   // Check if Exists
+  //   if(result){
       
-      user = result;
-      
-      
-      querypassword = req.body.password;
+  //     user = result;
+  //     querypassword = req.body.password;
     
-      // Check password
-      bcrypt.compare(querypassword, user.password).then(function(check) {
+  //     // Check password
+  //     bcrypt.compare(querypassword, user.password).then(function(check) {   
+  //       if(!check) {
+          
+  //         console.log("Incorrect Password");
+  //         res.redirect('signIn')
+  //       }
+  //       if(check) {
+          
+          
+  //         var token = jwt.sign({ _id: user._id, email: user.email }, process.env.JWT_KEY);
+          
+  //         console.log("Login Successful!");
+          
+  //         console.log("Token: ", token);
+          
+          
+  //       }
         
-        
-        if(!check) {
-          
-          console.log("Incorrect Password");
-          
-          res.redirect('signIn')
-          
-        }
-        
-        if(check) {
-          
-          
-          var token = jwt.sign({ _id: user._id, email: user.email }, process.env.JWT_KEY);
-          
-          console.log("Login Successful!");
-          
-          console.log("Token: ", token);
-          
-          // Create JWT Cookie
-          
-          
-          
-          
-          res.redirect('/admin/');
-        }
-        
-      });
+  //     });
       
-    }
-    else {
+  //   }
+  //   else {
       
-      //console.log("User Does Not Exist.");
-      res.redirect('/');
+  //     //console.log("User Does Not Exist.");
+  //     res.redirect('/');
       
-    }
-  })
-  .catch( function(err) {
-      if(err){
-          console.log('DB Error:' + err);
-      }
-  }); 
+  //   }
+  // })
+  // .catch( function(err) {
+  //     if(err){
+  //         console.log('DB Error:' + err);
+  //     }
+  // }); 
     
 }
-
 
 
 // POST Reset Password Function

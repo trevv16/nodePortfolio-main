@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% include ../partials/adminHead.ejs %>
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../stylesheets/user.css">
-    
+    <% include ../partials/internalHead.ejs %>
+    <link rel="stylesheet" href="/stylesheets/user.css">
   </head>
   <body>
     
     <main>
       <!--Header-->
       
-      <form id="userForm" method="POST" action="/users/signup">
-        <input class="emailField" type="text" name="name" placeholder="Name"/>
-        <input class="emailField" type="email" name="email" placeholder="Email"/>
-        <input class="passwordField" type="password" name="password" placeholder="Password"/>
-        <input class="passwordField" type="password" name="confirm_password" placeholder="Confirm Password"/>
+      <form id="userForm" method="POST" action="/users/logup">
+        <input id="emailField" type="text" name="name" placeholder="Name"/>
+        <input id="emailField" type="email" name="username" placeholder="Email"/>
+        <input id="passwordField" type="password" name="password" placeholder="Password"/>
+        <input id="passwordField" type="password" name="confirm_password" placeholder="Confirm Password"/>
         <a href="/user/forgot"><p id="forgotLink">Forgot Password?</p></a>
         <input id="submitBtn" type="submit" value="Sign Up"/>
       </form>

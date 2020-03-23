@@ -15,7 +15,7 @@ var adminCon = require("../controllers/adminCon.js");
 
 
 /* GET admin dashboard listing. */
-router.get('/', adminCon.getDash);
+router.get('/dash', adminCon.getDash);
 
   
 
