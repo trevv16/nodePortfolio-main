@@ -1,1 +1,3 @@
-# nodePortfolio-v1.0
+# Trev's Personal Portfolio
+
+This is a basic web application I built to serve a gallery for all my projects and skills.

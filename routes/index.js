@@ -47,7 +47,25 @@ router.get('/resume', function(req, res, next) {
 
 /* GET work page. */
 router.get('/work', function(req, res, next) {
-  res.render('work', {Title: "Work"});
+
+  Project.find()
+  .then(function(doc) {
+      
+      if (doc) {
+          foundprojects = doc;
+          res.render('work', {Title: "Work", Projects: foundprojects});
+          // res.render('projects', {Title: "Projects", Project: foundprojects, View: viewtype});   
+      }
+  
+  })
+  .catch( function(err) {
+      if(err){
+          console.log('DB Error: ' + err);
+      }
+  });
+
+
+  
 });
 
 

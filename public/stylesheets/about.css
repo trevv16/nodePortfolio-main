@@ -1,62 +1,53 @@
-
 /* About Me Section */
+
 .aboutSection {
-
-  margin-bottom: 25px;
-  margin-top: 75px;
-
+    margin-bottom: 25px;
+    margin-top: 75px;
 }
 
 .aboutImg img {
-
-  height: 450px;
-  width: auto;
-
+    height: 450px;
+    width: auto;
 }
 
 
 /* About Me Headers */
-.aboutDetails p, .aboutDetails h1 {
 
-  color: #fff;
+.aboutDetails p,
+.aboutDetails h1 {
+    color: #fff;
 }
 
 .aboutDetails h4 {
-
-  color: #454955;
+    color: #454955;
 }
 
-#focusSection a{
-
-  color: #EE6C4D;
+#focusSection li {
+    color: #EE6C4D;
 }
+
 
 /* About Me List */
-.aboutDetails ul {
-  display: inline-flex;
-  list-style: none;
 
+.aboutDetails ul {
+    display: inline-flex;
+    list-style: none;
 }
 
-
 .aboutDetails a {
-
-  color: #fff;
-
+    color: #fff;
 }
 
 .aboutType {
-  padding: 0;
-
+    padding: 0;
 }
 
 .aboutType li {
-
-  margin: 10px 30px 50px 0;
+    margin: 10px 30px 50px 0;
 }
 
-
-#education .sectionDetails, #experience .sectionDetails {
-
-  margin-left: 15px;
+#education .sectionDetails,
+#life .sectionDetails,
+#experience .sectionDetails {
+    margin-left: 15px;
 }

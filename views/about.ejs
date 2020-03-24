@@ -2,119 +2,89 @@
 <html lang="en">
 
 <head>
-  <%- include partials/head.ejs %>
-  <link rel="stylesheet" href="stylesheets/about.css">
+    <%- include partials/head.ejs %>
+        <link rel="stylesheet" href="stylesheets/about.css">
 </head>
 
 <body>
-  <!-- Navigation -->
-  <%- include partials/nav.ejs %>
+    <!-- Navigation -->
+    <%- include partials/nav.ejs %>
 
-  <!-- About Me Section -->
-  <div class="container">
+        <!-- About Me Section -->
+        <div class="container">
 
-    <div class="row">
+            <div class="row">
 
-      <div class="col-2 col-sm-2 col-xs-4">
-        <!-- Sidebar -->
-        <%- include partials/sidebar.ejs %>
+                <div class="col-2 col-sm-2 col-xs-4 p-2">
+                    <!-- Sidebar -->
+                    <%- include partials/sidebar.ejs %>
 
-      </div>
+                </div>
 
-    </div>
-  </div>
-
-  <!-- About Me Section -->
-  <div class="container">
-
-    <div class="col-11 aboutSection">
-      <div class="row">
-
-        <div class="col-8 col-md-6 col-sm-6">
-          <!-- About Me Image -->
-          <div class="aboutImg img-responsive">
-            <img src="images/aboutMeImg.png" alt="">
-          </div>
+            </div>
         </div>
 
-        <div class="col">
-          <div class="aboutDetails text-wrap">
-            <h4>More</h4>
-            <h1>About Me</h1>
-          </div>
+        <!-- About Me Section -->
+        <div class="container">
+            <div class="row aboutSection">
 
+                <div class="col-8 col-md-6 col-sm-8">
+                    <!-- About Me Image -->
+                    <div class="aboutImg img-responsive">
+                        <img src="images/aboutMeImg.png" alt="">
+                    </div>
+                </div>
 
-          <div id="life" class="aboutDetails details text-wrap">
-            <ul class="aboutType">
-              <li><a id="life-btn focusSection" href="about#life">Life</a></li>
-              <li><a id="ed-btn" href="about#education">Education</a></li>
-              <li><a id="ex-btn" href="about#experience">Experience</a></li>
-            </ul>
+                <div class="col-md-5 col-sm-8">
+                    <div class="aboutDetails text-wrap">
+                        <h4>More</h4>
+                        <h1>About Me</h1>
+                    </div>
 
-            <!-- Life Section -->
-            <p class="sectionDetails">Hello! I'm Trevor, currently specializing in
-              web development in Charlotte, NC.</p>
-            <!-- End Life Section -->
+                    <div class="aboutDetails text-wrap">
+                        <ul class="aboutType">
+                            <a id="life-btn" href="/about#life">
+                                <li>Life</li>
+                            </a>
+                            <a id="ed-btn" href="/about#education">
+                                <li>Education</li>
+                            </a>
+                            <a id="ex-btn" href="/about#experience">
+                                <li>Experience</li>
+                            </a>
+                        </ul>
 
-          </div>
+                        <!-- Life Section -->
+                        <div id="life" class="aboutDetails text-wrap">
+                            <p class="sectionDetails">Hello! I'm Trevor, currently specializing in web development in Charlotte, NC.</p>
+                        </div>
+                        <!-- End Life Section -->
 
+                        <!-- Education Section -->
+                        <div id="education" class="aboutDetails text-wrap">
+                            <p class="sectionDetails">I am a student at the Univeristy of North Carolina at Charlotte finishing up my degree in Computer Science.</p>
+                        </div>
+                        <!-- End Education Section -->
 
-          <div id="education" class="aboutDetails details text-wrap">
-            <ul class="aboutType">
-              <li><a id="life-btn" href="about#life">Life</a></li>
-              <li><a id="ed-btn focusSection" href="about#education">Education</a></li>
-              <li><a id="ex-btn" href="about#experience">Experience</a></li>
-            </ul>
-
-            <!-- Education Section -->
-            <div class="row">
-              <p class="sectionDetails">I am a student at the Univeristy of North Carolina at Charlotte finishing up my degree in Computer Science.</p>
+                        <!-- Experience Section -->
+                        <div id="experience" class="aboutDetails text-wrap">
+                            <p class="sectionDetails">I prototype, design and develop websites and web apps that provide minimal, mordern design with powerful backend technologies. </p>
+                        </div>
+                        <!-- End Experience Section -->
+                    </div>
+                </div>
             </div>
-            <!-- End Education Section -->
-
-          </div>
-
-
-          <div id="experience" class="aboutDetails details text-wrap">
-            <ul class="aboutType">
-              <li><a id="life-btn" href="about#life">Life</a></li>
-              <li><a id="ed-btn" href="about#education">Education</a></li>
-              <li><a id="ex-btn focusSection" href="about#experience">Experience</a></li>
-            </ul>
-
-            <!-- Experience Section -->
-            <div class="row">
-              <p class="sectionDetails">I prototype, design and develop websites and web apps that provide minimal, mordern design with powerful backend technologies. </p>
-            </div>
-            <!-- End Experience Section -->
-
-          </div>
-
-
-
-
-
-
-          </div>
-
         </div>
 
 
-      </div>
+
+
+        <%- include partials/footer.ejs %>
 
 
 
-    </div>
-
-
-
-
-  <%- include partials/footer.ejs %>
-
-
-
-  <%- include partials/scripts.ejs %>
-  <script src="./javascripts/about.js"></script>
+            <%- include partials/scripts.ejs %>
+                <script src="./javascripts/about.js"></script>
 </body>
 
 </html>
