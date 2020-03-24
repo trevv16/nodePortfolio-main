@@ -28,25 +28,25 @@
 
     <% Projects.forEach(function (proj) {%>
       <!-- Work Cards -->
-      <div class="row p-6">
+      <div class="row p-6 justify-content-center">
         <!-- 
         <div class="back">
           <a href=""><img src="images/Back-Icon.png" alt=""><h5>Web Dev</h5></a>
         </div>
         -->
 
-        <div class="card ml-5 mb-5 d-flex justify-content-center">
-          <div class="card-img">
-            <img class="rounded img-fluid" src="/images/ProjImg.png" alt="Work Image">
+        <div class="card mb-5 mt-3 d-flex">
+          <div class="card-img mb-5">
+            <img class="rounded img-fluid" src="<%= proj.proj_img %>" alt="Work Image">
           </div>
 
           <div class="card-details">
             <h1 class="title"><strong><%= proj.name %></strong></h1>
-            <p class="date"><%= new Date(proj.pub_date).toDateString() %></p>
+            <p class="date"><%= new Date(proj.pub_date).toDateString() || null %></p>
             <div class="icons">
               <ul>
-                <li><a href="<%= proj.code_link %>" class="link"><img src="images/Proj-Github-Icon.png" alt="Github"></a></li>
-                <li><a href="<%= proj.demo_link %>" class="link"><img src="images/Proj-Link-Icon.png" alt="Demo"></a></li>
+                <li><a href="<%= proj.code_link || "#" %>" class="link"><img src="images/Proj-Github-Icon.png" alt="Github"></a></li>
+                <li><a href="<%= proj.demo_link || "#" %>" class="link"><img src="images/Proj-Link-Icon.png" alt="Demo"></a></li>
               </ul>
             </div>
             <p class="work-desc">This is a website showing some basic js and design skills.</p>
