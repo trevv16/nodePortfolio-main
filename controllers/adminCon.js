@@ -9,35 +9,34 @@ var Post = require("../models/post.js");
 
 // GET Dash Function
 exports.getDash = function(req, res, next) { 
+  var foundprojects = [];
+  var viewtype;
   
-    var foundprojects = [];
-    var viewtype;
-    
-    if(req.query.viewtype) {
-      viewtype = req.query.viewtype;
-    }
-    else {
-      viewtype = "card";
-    }
-    
-    
-    Project.find()
-    
-    .then(function(proj) {
-        
-        if (proj) {
-            foundprojects = proj;
-        }
-    
-    })
-    .catch( function(err) {
-        if(err){
-            console.log('DB Error: ' + err);
-        }
-    });
-    
-    res.render('admin/dash', {Title: "Dashboard", Count: foundprojects.length, Project: foundprojects, View: viewtype});
-    
+  if(req.query.viewtype) {
+    viewtype = req.query.viewtype;
+  }
+  else {
+    viewtype = "card";
+  }
+  
+  
+  Project.find()
+  
+  .then(function(proj) {
+      
+      if (proj) {
+          foundprojects = proj;
+      }
+  
+  })
+  .catch( function(err) {
+      if(err){
+          console.log('DB Error: ' + err);
+      }
+  });
+  
+  res.render('admin/dash', {Title: "Dashboard", Count: foundprojects.length, Project: foundprojects, View: viewtype});
+  
 }
 
 

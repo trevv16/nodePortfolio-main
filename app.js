@@ -121,8 +121,8 @@ app.use(function(req, res, next) {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use('/admin', adminRouter);
 app.use('/', indexRouter);
-// app.use('/users', usersRouter);
 
 
 /* GET user sign up listing. */
