@@ -1,0 +1,58 @@
+<%
+function getImgBySkill([skills]) {
+    var skillImgs = [];
+    skills.forEach(function (skill) {
+        switch (skill.toLowerCase()) {
+            case 'html':
+                skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/html.png";
+                skillImgs.push(skName);
+            break;
+            
+            case 'css':
+                skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/css.png";
+                skillImgs.push(skName);
+            break;
+            
+            case 'javascript':
+                skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/js.png";
+                skillImgs.push(skName);
+            break;
+            
+            case 'java':
+                skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/java.png";
+                skillImgs.push(skName);
+            break;
+            
+            case 'jquery':
+                skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/jqueryIcon.png";
+                skillImgs.push(skName);
+            break;
+            
+            case 'node js':
+                skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/node.png";
+                skillImgs.push(skName);
+            break;
+            
+            case 'bootstrap':
+                skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/bootstrap.png";
+                skillImgs.push(skName);
+            break;
+            
+            case 'mongodb':
+                skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/mongodb.png";
+                skillImgs.push(skName);
+            break;
+            
+            case 'sql':
+                skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/sql.png";
+                skillImgs.push(skName);
+            break;
+            
+            
+            default:
+                // code
+            break;
+        }
+    });
+}
+%>
