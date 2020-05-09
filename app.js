@@ -126,62 +126,62 @@ app.use('/', indexRouter);
 
 
 /* GET user sign up listing. */
-app.get('/users/signup', pass.checkNOTAuth, function(req, res, next) {
-  res.render('user/signup', {Title: "Sign Up"});
-});
+// app.get('/users/signup', pass.checkNOTAuth, function(req, res, next) {
+//   res.render('user/signup', {Title: "Sign Up"});
+// });
 
-/* POST user sign up listing. */
-app.post('/users/logup', userCon.signUp);
+// /* POST user sign up listing. */
+// app.post('/users/logup', userCon.signUp);
 
-/* GET user sign in listing. */
-app.get('/users/signin', pass.checkNOTAuth, function(req, res, next) {
-  res.render('user/signin', {Title: "Sign In", messages: req.message});
-});
+// /* GET user sign in listing. */
+// app.get('/users/signin', pass.checkNOTAuth, function(req, res, next) {
+//   res.render('user/signin', {Title: "Sign In", messages: req.message});
+// });
 
-/* POST user sign in listing. */
-app.post('/users/login', function(req,res,next){
+// /* POST user sign in listing. */
+// app.post('/users/login', function(req,res,next){
 
-    console.log('Body', req.body);
-    passport.authenticate("local", function(err, user, info){
-      if(err) {
-        console.log(err);
-      }
-      if(!user){
-        res.redirect('signin');
-      }
-      else {
-        req.logIn();
-        res.redirect('about');
-      }
-      console.log(info);
+//     console.log('Body', req.body);
+//     passport.authenticate("local", function(err, user, info){
+//       if(err) {
+//         console.log(err);
+//       }
+//       if(!user){
+//         res.redirect('signin');
+//       }
+//       else {
+//         req.logIn();
+//         res.redirect('about');
+//       }
+//       console.log(info);
       
-   })(req,res,next); 
- });
+//    })(req,res,next); 
+//  });
 
-/* GET user sign out listing. */
-app.get('/users/signout', function(req, res, next) {
-  req.logout();
-  req.session.destroy(function (err) {
-    res.clearCookie('connect.sid');
-    res.redirect('signin'); //Inside a callback… bulletproof!
-  });
-});
+// /* GET user sign out listing. */
+// app.get('/users/signout', function(req, res, next) {
+//   req.logout();
+//   req.session.destroy(function (err) {
+//     res.clearCookie('connect.sid');
+//     res.redirect('signin'); //Inside a callback… bulletproof!
+//   });
+// });
 
-/* GET user forgot password listing. */
-app.get('/users/forgot',pass.checkNOTAuth, function(req, res, next) {
-  res.render('user/forgot', {Title: "Forgot Password"});
-});
+// /* GET user forgot password listing. */
+// app.get('/users/forgot',pass.checkNOTAuth, function(req, res, next) {
+//   res.render('user/forgot', {Title: "Forgot Password"});
+// });
 
-/* POST user forgot password listing. */
-app.post('/users/resetpassword',pass.checkNOTAuth, userCon.resetpassword);
+// /* POST user forgot password listing. */
+// app.post('/users/resetpassword',pass.checkNOTAuth, userCon.resetpassword);
 
-/* GET change forgot password listing. */
-app.get('/users/updatePassword/:userID',pass.checkNOTAuth, function(req, res, next) {
-  res.render('user/changePw', {Title: "Change Password"});
-});
+// /* GET change forgot password listing. */
+// app.get('/users/updatePassword/:userID',pass.checkNOTAuth, function(req, res, next) {
+//   res.render('user/changePw', {Title: "Change Password"});
+// });
 
-/* GET change forgot password listing. */
-app.post('/users/updatePassword/:userID',pass.checkNOTAuth, userCon.changepassword);
+// /* GET change forgot password listing. */
+// app.post('/users/updatePassword/:userID',pass.checkNOTAuth, userCon.changepassword);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

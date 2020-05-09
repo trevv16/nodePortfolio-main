@@ -40,26 +40,26 @@ router.post('/updateProject/:_id', adminCon.updateProject);
 //////////////// ADMIN BLOG FUNCTIONS /////////////////////////////////////// 
 
 /* GET blogs listing. */
-router.get('/blog', adminCon.getBlogs);
+// router.get('/blog', adminCon.getBlogs);
 
 
-/* GET posts of blog listing. */
-router.get('/blog/:blogName', adminCon.getBlogPosts);
+// /* GET posts of blog listing. */
+// router.get('/blog/:blogName', adminCon.getBlogPosts);
 
-/* GET post listing. */
-router.get('/blog/:postID', adminCon.getPost);
+// /* GET post listing. */
+// router.get('/blog/:postID', adminCon.getPost);
 
 
-/* GET new post listing. */
-router.get('/blog/newPost', adminCon.newPost);
+// /* GET new post listing. */
+// router.get('/blog/newPost', adminCon.newPost);
 
-/* GET new post listing. */
-router.post('/blog/addPost', adminCon.addPost);
+// /* GET new post listing. */
+// router.post('/blog/addPost', adminCon.addPost);
 
-/* GET new post listing. */
-router.get('/blog/editPost', adminCon.editPost);
+// /* GET new post listing. */
+// router.get('/blog/editPost', adminCon.editPost);
 
-/* GET new post listing. */
-router.get('/blog/updatePost', adminCon.updatePost);
+// /* GET new post listing. */
+// router.get('/blog/updatePost', adminCon.updatePost);
 
 module.exports = router;
