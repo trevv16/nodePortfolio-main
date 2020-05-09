@@ -20,6 +20,7 @@ var User = require('./models/user.js');
 var dotenv = require('dotenv').config();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var projectRouter = require('./routes/projects');
 var adminRouter = require('./routes/admin');
 
 
@@ -122,6 +123,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use('/admin', adminRouter);
+app.use('/project', projectRouter);
 app.use('/', indexRouter);
 
 
