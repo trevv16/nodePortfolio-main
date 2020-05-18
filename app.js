@@ -1,23 +1,28 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var userCon = require("./controllers/userCon.js");
-var multer = require('multer');
-var upload = multer({dest: __dirname + '/uploads/images'});
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const flash = require('express-flash');
+const logger = require('morgan');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+require('dotenv').config();
+const expressLayouts = require('express-ejs-layouts');
+const bcrypt = require("bcryptjs");
 
-var flash = require('express-flash');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
-var pass = require('./config/passport.js');
-// Passport --Auth
-var passport = require('passport'), LocalStrategy = require('passport-local').Strategy;
-var User = require('./models/user.js');
-// Configure ENV variables
-var dotenv = require('dotenv').config();
+// Passport Config
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
+
+// Models
+const User = require("./models/user.js");
+
+
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var projectRouter = require('./routes/projects');
