@@ -76,11 +76,11 @@ passport.use(new LocalStrategy({
 
 var app = express();
 
-mongoose.connect("mongodb+srv://trevv:"+ process.env.MONGO_ATLAS_PW +"@dev-rv8ag.mongodb.net/Portfolio?retryWrites=true&w=majority",{
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-    useUnifiedTopology: true
+mongoose.connect(`mongodb+srv://${process.env.MONOG_ATLAS_USER}:${process.env.MONGO_ATLAS_PW}@dev-rv8ag.mongodb.net/${process.env.MONGO_ATLAS_DB_NAME}?retryWrites=true&w=majority`, {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
 });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -88,26 +88,45 @@ db.once('open', function() {
   // we're connected!
 });
 
-// parse application/json
 app.use(bodyParser.json());
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors());
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cookieParser(process.env.COOKIE_SECRET));
+const sessConfig = {
+  cookie: {maxAge: 2628000000},
+  store: new (require('express-sessions'))({
+    storage: 'mongodb',
+    instance: mongoose,
+    db: process.env.MONGO_ATLAS_DB_NAME, // optional
+    collection: 'sessions', // optional
+    expire: 86400, // optional
+  }),
+  saveUninitialized: false,
+  resave: true,
+  secret: process.env.SESSION_SECRET,
+};
 
-app.use(flash());
-app.use(session({
-   store: new MongoStore({ mongooseConnection: mongoose.connection }),
-   secret: process.env.SESSION_SECRET,
-   resave: false,
-   saveUninitialized: false
-  }));
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1); // trust first proxy
+  sess.cookie.secure = true; // serve secure cookies
+}
+
+app.use(session(sessConfig));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 
 app.use(function(req, res, next) {

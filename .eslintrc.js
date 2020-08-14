@@ -1,17 +1,24 @@
 module.exports = {
-	env: {
-		browser: true,
-		commonjs: true,
-		es6: true,
+	'env': {
+	  'browser': true,
+	  'commonjs': true,
+	  'es6': true,
 	},
-	plugins: ['ejs'],
-	globals: {
-		Atomics: 'readonly',
-		SharedArrayBuffer: 'readonly',
+	'extends': [
+	  'google',
+	  'plugin:prettier/recommended',
+	  'plugin:ejs'
+	],
+	"plugins": [
+	  "ejs"
+	],
+	'globals': {
+	  'Atomics': 'readonly',
+	  'SharedArrayBuffer': 'readonly',
 	},
-	parserOptions: {
-		ecmaVersion: 2018,
+	'parserOptions': {
+	  'ecmaVersion': 2018,
 	},
-	rules: {},
-	extends: ['google', 'prettier'],
-};
+	'rules': {
+	},
+  };
