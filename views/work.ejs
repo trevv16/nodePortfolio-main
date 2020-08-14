@@ -45,8 +45,8 @@
             <p class="date"><%= new Date(proj.pub_date).toDateString() || null %></p>
             <div class="icons">
               <ul>
-                <li><a href="<%= proj.code_link || "#" %>" class="link"><img src="https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portofolio-v1.0/Proj-Github-Icon.png" alt="Github"></a></li>
-                <li><a href="<%= proj.demo_link || "#" %>" class="link"><img src="https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portofolio-v1.0/Proj-Link-Icon.png" alt="Demo"></a></li>
+                <li><a href="<%= proj.code_link || "#" %>" class="link" target="_blank"><img src="https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portofolio-v1.0/Proj-Github-Icon.png" alt="Github"></a></li>
+                <li><a href="/project<%= proj.demo_link || "#" %>" class="link" target="_blank"><img src="https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portofolio-v1.0/Proj-Link-Icon.png" alt="Demo"></a></li>
               </ul>
             </div>
             <p class="work-desc">This is a website showing some basic js and design skills.</p>
@@ -54,18 +54,75 @@
 
           <h5>Built With</h5>
 
-          <div class="skill-list">
-            <div class="skill">
-              <h5>HTML</h5>
+          <%
+          function getImgBySkill(sks) {
+            let skillImgs = [];
+              sks.forEach(function (obj) {
+                  switch (obj.skill.toLowerCase()) {
+                      case 'html':
+                          skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/html.png";
+                          skillImgs.push(skName);
+                      break;
+                      
+                      case 'css':
+                          skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/css.png";
+                          skillImgs.push(skName);
+                      break;
+                      
+                      case 'javascript':
+                          skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/js.png";
+                          skillImgs.push(skName);
+                      break;
+                      
+                      case 'java':
+                          skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/java.png";
+                          skillImgs.push(skName);
+                      break;
+                      
+                      case 'jquery':
+                          skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/jqueryIcon.png";
+                          skillImgs.push(skName);
+                      break;
+                      
+                      case 'node js':
+                          skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/node.png";
+                          skillImgs.push(skName);
+                      break;
+                      
+                      case 'bootstrap':
+                          skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/bootstrap.png";
+                          skillImgs.push(skName);
+                      break;
+                      
+                      case 'mongodb':
+                          skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/mongodb.png";
+                          skillImgs.push(skName);
+                      break;
+                      
+                      case 'sql':
+                          skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/sql.png";
+                          skillImgs.push(skName);
+                      break;
+                      
+                      
+                      default:
+                          // code
+                      break;
+                  }
+              });
+              return skillImgs;
+              console.log("list", skillImgs);
+          }
+          %>
+          <% let skills = new Array(getImgBySkill([...proj.skills_used])) %>
+          <% console.log("skills", skills); %>
+            <div class="skill-list">
+              <% skills.forEach(function (skill) { %>
+                <div class="skill">
+                  <img src="<%- skill %>">
+                </div>
+              <%})%>
             </div>
-            <div class="skill">
-              <h5>CSS</h5>
-            </div>
-            <div class="skill">
-              <h5>JS</h5>
-            </div>
-          </div>
-
         </div>
         
       </div>

@@ -1,17 +1,125 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include ../partials/head.ejs %>
-    
+    <%- include ../partials/adminHead.ejs %>
+    <link rel="stylesheet" href="../stylesheets/work.css">
+    <link rel="stylesheet" href="../stylesheets/admin.css">
   </head>
   <body>
-    <%- include ../partials/adminNav.ejs %>
-    <%- include ../partials/header.ejs %>
-    
+  <%- include ./adminNav.ejs %>
+    <div class="container-fluid">
+
+      <%- include ../partials/nav.ejs %>
+    </div>
     <main>
-      <%- include ../partials/projectsCard.ejs %>
+      <div class="container justify-content-center">
+        <% var proj = Work;%>
+        <% for (var i=0; i < Object.keys(Work).length; i++) {%>
+          <!-- Work Cards -->
+          <div class="row p-6 justify-content-center">
+            <!--
+            <div class="back">
+              <a href=""><img src="https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portofolio-v1.0/Back-Icon.png" alt=""><h5>Web Dev</h5></a>
+            </div>
+            -->
+
+            <div class="card mb-5 mt-3 d-flex">
+              <div class="card-img mb-5">
+                <img class="rounded img-fluid" src="<%= proj[i].proj_img %>" alt="Work Image">
+              </div>
+
+              <div class="card-details">
+                <h1 class="title"><strong><%= proj[i].name %></strong></h1>
+                <p class="date"><%= new Date(proj[i].pub_date).toDateString() || null %></p>
+                <div class="icons">
+                  <ul>
+                    <li><a href="<%= proj[i].code_link || "#" %>" class="link"><img src="https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portofolio-v1.0/Proj-Github-Icon.png" alt="Github"></a></li>
+                    <li><a href="<%= proj[i].demo_link || "#" %>" class="link"><img src="https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portofolio-v1.0/Proj-Link-Icon.png" alt="Demo"></a></li>
+                  </ul>
+                </div>
+                <p class="work-desc">This is a website showing some basic js and design skills.</p>
+              </div>
+
+              <h5>Built With</h5>
+
+              <%
+              function getImgBySkill([skills]) {
+                  var skillImgs = [];
+                  skills.forEach(function (skill) {
+                      switch (skill.toLowerCase()) {
+                          case 'html':
+                              skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/html.png";
+                              skillImgs.push(skName);
+                          break;
+
+                          case 'css':
+                              skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/css.png";
+                              skillImgs.push(skName);
+                          break;
+
+                          case 'javascript':
+                              skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/js.png";
+                              skillImgs.push(skName);
+                          break;
+
+                          case 'java':
+                              skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/java.png";
+                              skillImgs.push(skName);
+                          break;
+
+                          case 'jquery':
+                              skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/jqueryIcon.png";
+                              skillImgs.push(skName);
+                          break;
+
+                          case 'node js':
+                              skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/node.png";
+                              skillImgs.push(skName);
+                          break;
+
+                          case 'bootstrap':
+                              skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/bootstrap.png";
+                              skillImgs.push(skName);
+                          break;
+
+                          case 'mongodb':
+                              skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/mongodb.png";
+                              skillImgs.push(skName);
+                          break;
+
+                          case 'sql':
+                              skName = "https://elasticbeanstalk-us-east-2-257945705175.s3.us-east-2.amazonaws.com/portfolioimages/sql.png";
+                              skillImgs.push(skName);
+                          break;
+
+
+                          default:
+                              // code
+                          break;
+                      }
+                  });
+                  return skillImgs;
+                  console.log("list", skillImgs);
+              }
+              %>
+              <% var skills = new Array(getImgBySkill(proj[i].skills_used))%>
+              <% console.log("skills", skills); %>
+
+              <div class="skill-list">
+                <% skills.forEach(function (skill) { %>
+                  <div class="skill">
+                    <img src="<%= skill %>">
+                  </div>
+                <% }); %>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- End Work Cards -->
+        <% }; %>
+      </div>
     </main>
-    
     <%- include ../partials/footer.ejs %>
   </body>
 </html>
